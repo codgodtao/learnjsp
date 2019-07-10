@@ -1,0 +1,53 @@
+jsp是真的很难，教程太烂了！
+jstl,标准标签库，用于输入和控制
+JDBC对数据库的访问
+tomcat的conf文件夹用于配置
+work存放临时文件logs系统运行时候的日志信息
+
+
+<table>
+       表格的语法<tr>每一行 </tr><td> 每一列</td>
+</table>
+浏览器要向服务器提交信息，应该使用from
+<from action="目标文件"method="get||post">
+各种表单元素
+</from>
+
+单行文本框
+<input type ="text" name ="名字" value ="值">
+type = "text"说明这是单行文本框,name是文本框的名字,value给出默认值
+密码
+<input type="password" name ="名字" value="值">
+提交按钮
+<input type ="submit" value="值">
+复位reset 单选radio 复选框checkbox
+下拉列表
+<select>
+  <option value=""selected>1  </option>
+  <option value ="" >2       </option>
+</select>
+超链接
+<a?href="register.jsp">注册</a>?
+
+<%@?include?file="目标文件"%>
+<jsp:include?page="目标文件"/>
+会返回
+
+<jsp:forward?page="目标文件"/>斜杠不能省略。
+esponse.sendRedirect("目标文件");
+不返回
+
+JSP文件声明标签库
+<%@prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+完成判断过程
+<c: if test= "条件" >条件成功要执行的内容</c:if>
+
+
+四个保存内存信息的变量
+appication公用session为用户request为请求pageContext为页面
+在这些范围保存信息用到标签库
+<c:set var="变量名"scope="范围"value="值">
+<c:set var="username" scope="session" value="${param.username}"/>
+
+
+<h1>对Servlet的理解</h1>
