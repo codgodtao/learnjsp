@@ -51,3 +51,47 @@ appication公用session为用户request为请求pageContext为页面
 
 
 <h1>对Servlet的理解</h1>
+servlet中不能使用this.因为所有请求是多线程的
+保存的信息放到session中
+在jsp里定义一个通用的方法要用到<%!.......%>
+
+
+<h2>剖析el表达式</h2>
+<%@ page isELIgnored="ture" %>这条jsp指令禁用了el表达式
+也可以在web.xml里添加<el0ignored>true</el-ignored>批量禁用el
+el表达式依次搜索
+pageContext.getATTRIBUTE("name")
+request.getAttrubute("name")
+session.getAttribute("name")
+application.getAttribute("name")
+pageScope就是把page作用域的数据映射为一个对象
+创建一个cookie对象
+Cookie cookie = new Cookie("username","username in cookie");
+response.addCookie(cookie);
+创建一个名称为username,值为username in cookie的对象
+${cookie.username.name}
+${cookie.username.value}
+
+九大默认对象
+public void ...(ServletRequest req,ServletResponse res)
+{
+HttpServletResponse response=(HttpServletResponse) res ;
+}     request类似
+out对应从response取出的writer对象
+Writer out = response.getWriter();
+try {
+pageno=Intergeer.pareInt(request.getParameter("pageno");
+}catch(Exception ex){
+}                                                       
+捕捉异常
+
+
+
+使用jstl标签替换jsp代码
+core提供标签foreach和判断标签if
+fmt为我们格式化日期
+functions可以判断list的长度
+<c:forEach var="" items="" varStatus="">
+</c:foreach>   
+<c:if test="${}">
+</c:if>
